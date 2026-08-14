@@ -2,6 +2,8 @@
 
 A tested, accessible strategy puzzle evolved from my original Lights Out coursework project and redesigned as a standalone portfolio application.
 
+**[Play the live demo](https://paulrevanthpersonal-lab.github.io/lights-out-studio/)**
+
 ![Lights Out desktop game](docs/screenshots/game-desktop.png)
 
 ## 1. Overview
