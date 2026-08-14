@@ -1,19 +1,20 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lights Out Studio - an accessible strategy puzzle."><title>Lights Out Studio</title><link rel="stylesheet" href="assets/styles.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Neon Circuit is a complete Lights Out puzzle with daily challenges, optimal hints, scoring, achievements, and a persistent leaderboard."><title>Neon Circuit · Lights Out</title><link rel="stylesheet" href="assets/styles.css"></head>
 <body>
   <main class="shell">
-    <header><a class="wordmark" href="#">L/O <span>STUDIO</span></a><p>LOGIC PUZZLE · SESSION 04</p><button id="soundToggle" aria-pressed="false">SOUND OFF</button></header>
+    <header><a class="wordmark" href="#">NEON <span>CIRCUIT</span></a><p>LIGHTS OUT · DAILY LOGIC SYSTEM</p><div><button id="leaderboardButton">LEADERBOARD</button><button id="soundToggle" aria-pressed="false">SOUND OFF</button></div></header>
     <section class="game-stage">
-      <div class="intro"><p class="kicker">CLEAR THE SIGNAL</p><h1>Lights<br><em>Out.</em></h1><p>Every move flips one light and its neighbors. Find the quiet pattern in the noise.</p><div class="difficulty" aria-label="Board size"><button data-size="4">4×4</button><button class="active" data-size="5">5×5</button><button data-size="6">6×6</button></div></div>
+      <div class="intro"><p class="kicker">CLEAR THE SIGNAL</p><h1>Lights<br><em>Out.</em></h1><p>Every move flips one light and its neighbors. Find the quiet pattern in the noise.</p><div class="difficulty" aria-label="Board size"><button data-size="4">4×4</button><button class="active" data-size="5">5×5</button><button data-size="6">6×6</button></div><button class="daily-button" id="dailyChallenge">LOAD DAILY CIRCUIT</button><p class="daily-meta" id="dailyMeta"></p></div>
       <div class="console">
-        <div class="console-top"><div><small>MOVES</small><strong id="moves">00</strong></div><div><small>TIME</small><strong id="timer">00:00</strong></div><div><small>BEST</small><strong id="best">—</strong></div></div>
+        <div class="console-top"><div><small>MOVES</small><strong id="moves">00</strong></div><div><small>TIME</small><strong id="timer">00:00</strong></div><div><small>OPTIMAL</small><strong id="optimal">—</strong></div><div><small>BEST</small><strong id="best">—</strong></div></div>
         <div class="board" id="board" role="grid" aria-label="Lights Out board"></div>
         <div class="console-actions"><button id="newGame">NEW PATTERN</button><button id="hint">ONE HINT</button></div>
       </div>
       <aside class="session"><p class="kicker">SESSION LOG</p><ol id="moveLog"><li>Pattern initialized</li></ol><div class="rule"><span>01</span><p>Select a tile to flip its cross-shaped neighborhood.</p></div><div class="rule"><span>02</span><p>Turn every signal dark to complete the board.</p></div></aside>
     </section>
   </main>
-  <dialog id="winDialog"><p class="kicker">PATTERN RESOLVED</p><h2>Signal cleared.</h2><p id="winSummary"></p><button id="playAgain">PLAY ANOTHER</button></dialog>
-  <script src="assets/core.js"></script><script src="assets/app.js"></script>
+  <dialog id="winDialog"><p class="kicker">PATTERN RESOLVED</p><h2>Signal cleared.</h2><p id="winSummary"></p><form id="scoreForm"><label>PLAYER TAG<input name="player" value="PaulR" minlength="2" maxlength="18" pattern="[A-Za-z0-9_-]+" required></label><button>SUBMIT SCORE</button></form><button id="playAgain">PLAY ANOTHER</button></dialog>
+  <dialog id="leaderboardDialog" class="leaderboard-dialog"><button id="closeLeaderboard" class="close">×</button><p class="kicker">GLOBAL SCORES</p><h2>Leaderboard</h2><div id="leaderboard"></div></dialog>
+  <script src="assets/core.js"></script><script type="module" src="assets/app.js"></script>
 </body></html>
